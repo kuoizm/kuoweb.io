@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>BATHROOM BIODOME</title>
+
+  <!-- Adobe Fonts: burnaby-stencil -->
+  <style>
+    @import url("https://use.typekit.net/clq1fnf.css");
+  </style>
+
+  <!-- Spoqa Han Sans Neo -->
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+
+  <style>
+    /* 전체 기본 폰트: 스포카 */
+    * {
+      font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    }
+
+    body {
+      margin: 0;
+      background-color: black;
+      color: limegreen;
+    }
+
+    .wrap 
+    {width: 1000px !important;
+    margin: 0 auto;}
+
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-image: url('bath.jpg'); /* 실제 이미지 경로로 수정 */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-text {
+      font-family: burnaby-stencil, sans-serif; /* 타이틀만 burnaby 적용 */
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10vw;
+      line-height: 1;
+      color: #00ff00;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .second-section {
+      background-color: black;
+      padding: 300px 20px 20px;
+      text-align: center;
+    }
+
+    .second-text {
+      font-size: 2.7vw;
+      font-weight: bold;
+      color: #00ff00;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    .gif-combo {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 0; /* 붙여서 보이게 하려면 간격 없음 */
+}
+
+    .gif-combo img {
+     max-width: 30%;
+     height: auto;
+      display: block;
+}
+
+.third-section {
+  background-color: black;
+  color: white;
+  padding: 200px 5vw;
+}
+
+.hotspot-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hotspot-header p {
+  font-size: 2vw;
+  margin: 0;
+  margin-bottom: -30px;
+}
+
+.hotspot-header h2 {
+  font-size: 4vw;
+  color: #00ff00;
+  margin-bottom: 40px;
+}
+
+.hotspot-content {
+  position: relative;
+  width: 100%;
+  height: 900px; /* 조절 가능 */
+}
+
+.hotspot-text {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-10%);
+  text-align: left;
+  font-size: 1.1vw;
+  line-height: 1.8;
+  max-width: 400px;
+}
+
+.hotspot-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hotspot-images img {
+  position: absolute;
+  height: auto;
+  border-radius: 0px;
+  object-fit: cover;
+}
+
+.img1 { top: 100px; right: 10%;  width: 200px;}
+.img2 { top: 570px; left: 10%; 
+width: 400px;}
+.img3 { top: 270px; left: 40%;   width: 200px;}
+.img4 {top: 10px; left: 10%; width: 300px;}
+.img5 { top: 220px; left: 70%;    width: 200px; }
+.img6 { top: 680px; left: 38%;   width: 150px;}
+.img7 { top: 630px; left: 48%;   width: 200px;}
+.img8 { top: 680px; right: 10%;   width: 100px;}
+.img9 { top: 530px; right: 10%;   width: 100px;}
+.img10 { top: 430px; right: 15%;   width: 100px;}
+
+.location-bacteria {
+  background-color: black;
+  color: #00ff00;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.location-title {
+  font-size: 3vw;
+  margin-bottom: 40px;
+}
+
+.bacteria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 60px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bacteria-grid img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.bacteria-grid img:hover {
+  transform: scale(1.1);
+}
+
+
+/* 개별 이미지 크기 지정 (우선순위 높이기 위해 !important 사용) */
+.img-large {
+  width: 290px !important;
+}
+
+.img-small {
+  width: 140px !important;
+}
+
+.img-wide {
+  width: 200px !important;
+}
+
+/* 기본 공통 강조 스타일 */
+.grade div {
+  padding: 5px 12px;
+  border: 1px solid limegreen;
+  display: inline-block;
+  min-width: 400px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+/* 등급별 강조 스타일 */
+.highlight-10 {
+  background-color: #7CFC00; /* 연두색 */
+  color: black;
+  font-weight: bold;
+  border: 2px solid #7CFC00;
+  box-shadow: 0 0 10px #7CFC00;
+}
+
+.highlight-7 {
+  background-color: #FFD700; /* 노란색 */
+  color: black;
+  font-weight: bold;
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+}
+
+.highlight-4 {
+  background-color: #FFA500; /* 주황색 */
+  color: black;
+  font-weight: bold;
+  border: 2px solid #FFA500;
+  box-shadow: 0 0 10px #FFA500;
+}
+
+.highlight-0 {
+  background-color: #FF4500; /* 빨간색 */
+  color: white;
+  font-weight: bold;
+  border: 2px solid #FF4500;
+  box-shadow: 0 0 10px #FF4500;
+}
+
+.hero.invert {
+  filter: invert(1);
+  transition: filter 0.4s ease;
+}
+
+.hero-text {
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+    .draggable-icon {
+  width: 70px;       
+  height: auto;
+  cursor: grab;
+  display: block;
+}
+
+    .calendar-table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    .calendar-table th, .calendar-table td {
+      border: 1px solid #444;
+      width: 14%;
+      height: 80px;
+      vertical-align: top;
+      padding: 4px;
+      font-size: 1vw;
+      position: relative;
+    }
+    .calendar-table td {
+      background-color: black;
+    }
+    .calendar-table .day-number {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      color: #fff;
+      font-size: 0.9vw;
+    }
+    .calendar-table .icon-dropzone {
+      text-align: center;
+      padding-top: 6px;
+      min-height: 30px;
+    }
+    .calendar-table .icon-dropzone {
+  min-height: 60px;         /* 최소 높이 확보 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+    .calendar-table thead th {
+  height: 30px; /* 원하는 만큼 줄이기 */
+  padding: 4px;
+  font-size: 0.9vw;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">BATHROOM<br>BIODOME</div>
+    </div>
+  </section>
+
+  <!-- Second Section -->
+  <section class="second-section">
+  <div class="second-text">
+    물만 내리면 끝이라고 믿으셨다면,<br>
+    다시 생각해보셔야 할지도 모릅니다.
+  </div>
+  <div class="gif-combo">
+    <img src="left.gif" alt="좌측 화장실 GIF">
+    <img src="right.gif" alt="우측 화장실 GIF">
+  </div>
+
+  <!-- Third Section: HOT SPOT -->
+<section class="third-section wrap">
+  <div class="hotspot-header">
+    <p>세균들의 HOT SPOT</p>
+    <h2>화장실</h2>
+  </div>
+
+  <div class="hotspot-content">
+    <!-- 텍스트 -->
+    <div class="hotspot-text">
+      화장실은 타액, 피부, 소변 및 대변 등 사람의 분비물로부터<br>
+      유래되는 미생물로 오염되어 있습니다.<br>
+      특히 화장실 접촉표면에는 다양한 미생물이 존재하며<br>
+      인체 관련 세균들이 주도적입니다.
+    </div>
+
+    <!-- 이미지 배치 -->
+    <div class="hotspot-images wrap">
+      <img src="gg1.jpg" class="img img1">
+      <img src="gg2.jpg" class="img img2">
+      <img src="gg3.jpg" class="img img3">
+      <img src="gg4.jpg" class="img img4">
+      <img src="gg5.jpg" class="img img5">
+      <img src="ba1.jpg" class="img img6">
+      <img src="ba2.jpg" class="img img7">
+      <img src="ba3.jpg" class="img img8">
+      <img src="ba3.jpg" class="img img9">
+      <img src="ba3.jpg" class="img img10">
+    </div>
+  </div>
+</section>
+
+<section class="location-bacteria">
+  <h2 class="location-title">위치 별 세균</h2>
+  <div class="bacteria-grid">
+     <a href="ecoli/index.html">
+    <img src="tt1.png" class="img-large" alt="위치 1">
+      </a>
+    <img src="tt2.png" class="img-large"alt="위치 2">
+    <img src="tt3.jpg" alt="위치 3">
+    <img src="tt4.png" alt="위치 4">
+    <img src="tt5.png" class="img-large" alt="위치 5">
+    <img src="tt6.png" alt="위치 6">
+  </div>
+</section>
+
+<!-- 위생 자가진단 테스트 섹션 시작 -->
+<section class="check-section wrap" style="padding: 120px 5vw; background-color: black; color: white;">
+  <h1 style="color: #00ff00; font-size: 3vw; margin-bottom: 40px;">위생 자가진단 테스트</h1>
+
+  <table style="width: 100%; border-collapse: collapse; max-width: 900px; margin: auto;">
+    <tbody id="checklist">
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">1. 변기 뚜껑을 닫고 물을 내립니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">2. 변기 손잡이나 버튼을 일주일에 한 번 이상 닦습니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">3. 칫솔이나 세면용품을 뚜껑 없이 변기 근처에 두고 있습니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">4. 세면대 배수구를 한 달에 한 번 이상 청소합니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">5. 손을 씻은 후 개인 수건이나 자연 건조를 사용합니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">6. 수건을 3일 이내에 한 번씩 교체합니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">7. 샤워볼/때타올을 한 달 이내에 교체합니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">8. 사용한 수건이나 샤워용품을 잘 건조되는 곳에 걸어둡니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">9. 칫솔을 뚜껑 없이 바람이 잘 통하는 곳에 보관합니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">10. 칫솔을 3개월 이내에 교체합니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">11. 칫솔을 변기에서 멀리 떨어진 위치에 보관합니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #00ff00;">
+        <td style="padding: 16px; font-size: 1.2vw; text-align: left;">12. 화장실에 창문/환풍기가 있어 주기적으로 환기합니까?</td>
+        <td><input type="checkbox" style="transform: scale(1.3);"></td>
+      </tr>
+  <td colspan="2" style="padding: 16px; text-align: right; font-size: 1.3vw;">
+     총 체크 수: <span id="score">0</span>
+  </td>
+</tr>
+    </tbody>
+  </table>
+
+  
+
+  <div class="grade" style="margin-top: 50px; line-height: 2; text-align: center; font-size: 1.1vw;">
+    <div id="grade-10">10~12개: 위생 관리 우수 (안심 등급)</div>
+    <div id="grade-7">7~9개: 보통 (주의 필요)</div>
+    <div id="grade-4">4~6개: 위험 (청소 루틴 점검 필요)</div>
+    <div id="grade-0">0~3개: 고위험 (세균 번식 환경)</div>
+  </div>
+</section>
+
+<script>
+  const checkboxes = document.querySelectorAll('#checklist input[type=checkbox]');
+  const scoreDisplay = document.getElementById('score');
+  const grade10 = document.getElementById('grade-10');
+  const grade7 = document.getElementById('grade-7');
+  const grade4 = document.getElementById('grade-4');
+  const grade0 = document.getElementById('grade-0');
+
+  function updateScore() {
+  const count = [...checkboxes].filter(cb => cb.checked).length;
+  scoreDisplay.textContent = count;
+
+  // 기존 클래스 제거
+  grade10.classList.remove('highlight-10');
+  grade7.classList.remove('highlight-7');
+  grade4.classList.remove('highlight-4');
+  grade0.classList.remove('highlight-0');
+
+  // 새로운 조건별로 클래스 추가
+  if (count >= 10) {
+    grade10.classList.add('highlight-10');
+  } else if (count >= 7) {
+    grade7.classList.add('highlight-7');
+  } else if (count >= 4) {
+    grade4.classList.add('highlight-4');
+  } else {
+    grade0.classList.add('highlight-0');
+  }
+}
+  checkboxes.forEach(cb => cb.addEventListener('change', updateScore));
+</script>
+
+<script>
+  const hero = document.querySelector('.hero');
+  const heroText = document.querySelector('.hero-text');
+
+  heroText.addEventListener('mouseenter', () => {
+    hero.classList.add('invert');
+  });
+
+  heroText.addEventListener('mouseleave', () => {
+    hero.classList.remove('invert');
+  });
+</script>
+
+
+ <section class="calendar-section" style="text-align: center; padding: 80px 20px; background: black; color: white;">
+    <h2 style="font-size: 2vw; color: #00ff00;">청소 리마인더</h2>
+
+    <!-- 청소 아이콘 목록 -->
+
+   <div id="icon-palette" style="display: flex; justify-content: center; gap: 40px;">
+  <div style="text-align: center;">
+    <img src="tt2.png" class="draggable-icon" draggable="true" data-type="sink">
+    <div style="color: white; font-size: 0.9vw;">월 2회</div>
+  </div>
+  <div style="text-align: center;">
+    <img src="tt4.png" class="draggable-icon" draggable="true" data-type="toothbrush">
+    <div style="color: white; font-size: 0.9vw;">월 1회</div>
+  </div>
+  <div style="text-align: center;">
+    <img src="tt1.png" class="draggable-icon" draggable="true" data-type="toilet">
+    <div style="color: white; font-size: 0.9vw;">주 2회</div>
+  </div>
+  <div style="text-align: center;">
+    <img src="tt3.jpg" class="draggable-icon" draggable="true" data-type="tile">
+    <div style="color: white; font-size: 0.9vw;">주 1회</div>
+  </div>
+  <div style="text-align: center;">
+    <img src="tt6.png" class="draggable-icon" draggable="true" data-type="scrubber">
+    <div style="color: white; font-size: 0.9vw;">월 1회</div>
+  </div>
+</div>
+
+
+    <!-- 슬라이드 버튼 -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 60px; margin-top: 50px; margin-bottom: 30px;">
+
+      <button id="prev-month" style="font-size: 2vw; background: none; border: none; color: #00ff00; cursor: pointer;">⟨</button>
+      <h3 id="calendar-title" style="margin: 0; font-size: 1.8vw;">2025년 6월</h3>
+      <button id="next-month" style="font-size: 2vw; background: none; border: none; color: #00ff00; cursor: pointer;">⟩</button>
+    </div>
+
+    <!-- 달력 표시 영역 -->
+    <div id="calendar-container"></div>
+  </section>
+
+  <script>
+    const monthData = {
+      6: { name: "6월", startDay: 6, days: 30 },
+      7: { name: "7월", startDay: 1, days: 31 },
+      8: { name: "8월", startDay: 4, days: 31 },
+    };
+
+    let currentMonth = 6;
+    const title = document.getElementById("calendar-title");
+    const container = document.getElementById("calendar-container");
+
+    function generateCalendar(month) {
+      const { name, startDay, days } = monthData[month];
+      title.textContent = `2025년 ${name}`;
+      let table = '<table class="calendar-table"><thead><tr>';
+      ['일','월','화','수','목','금','토'].forEach(d => table += `<th>${d}</th>`);
+      table += '</tr></thead><tbody><tr>';
+
+      let cell = 0;
+      for (let i = 0; i < startDay; i++) {
+        table += '<td></td>'; cell++;
+      }
+
+      for (let day = 1; day <= days; day++) {
+        table += `<td ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div class="day-number">${day}</div>
+          <div class="icon-dropzone"></div>
+        </td>`;
+        cell++;
+        if (cell % 7 === 0) table += '</tr><tr>';
+      }
+
+      while (cell % 7 !== 0) {
+        table += '<td></td>'; cell++;
+      }
+
+      table += '</tr></tbody></table>';
+      container.innerHTML = table;
+    }
+
+    document.getElementById('prev-month').onclick = () => {
+      currentMonth = currentMonth === 6 ? 8 : currentMonth - 1;
+      generateCalendar(currentMonth);
+    };
+
+    document.getElementById('next-month').onclick = () => {
+      currentMonth = currentMonth === 8 ? 6 : currentMonth + 1;
+      generateCalendar(currentMonth);
+    };
+
+    // Drag-and-drop
+    document.querySelectorAll('.draggable-icon').forEach(icon => {
+      icon.addEventListener('dragstart', e => {
+        e.dataTransfer.setData('type', e.target.dataset.type);
+        e.dataTransfer.setData('src', e.target.src);
+      });
+    });
+
+    function allowDrop(e) {
+      e.preventDefault();
+    }
+
+    function drop(e) {
+      e.preventDefault();
+      const type = e.dataTransfer.getData('type');
+      const src = e.dataTransfer.getData('src');
+      const dropzone = e.target.closest('td').querySelector('.icon-dropzone');
+      if (dropzone && dropzone.childNodes.length < 3) {
+        const img = document.createElement('img');
+img.src = src;
+img.alt = type;
+img.style.width = '54px';   // ⭐ 직접 스타일 지정
+img.style.margin = '3px auto';
+dropzone.appendChild(img);
+
+      }
+    }
+
+    generateCalendar(currentMonth);
+  </script>
+</script>
+
+
+
+</section>
+
+</body>
+</html>
